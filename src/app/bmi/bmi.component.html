@@ -1,0 +1,57 @@
+<h1>BMI kalkulátor</h1>
+<div class="container">
+  <form>
+    <div
+      class="row justify-content-center d-flex flex-column align-items-center"
+    >
+      <div class="col-8">
+        <label class="fs-5 my-2" for="magassag">Test Magasság (cm)</label>
+        <input
+          id="magassag"
+          [(ngModel)]="magassag"
+          name="magassag"
+          class="magassag w-100 rounded p-2"
+          type="number"
+        />
+
+        <label class="fs-5 my-2" for="suly">Súly (kg)</label>
+        <input
+          id="suly"
+          [(ngModel)]="suly"
+          name="suly"
+          class="suly w-100 rounded p-2"
+          type="number"
+        />
+
+        <div class="col d-flex justify-content-center">
+          <button
+            (click)="EredmenyMentes()"
+            id="btn"
+            class="btn btn-success my-4 px-5"
+          >
+            Eredmény
+          </button>
+        </div>
+
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>Magasság</th>
+              <th>Súly</th>
+              <th>Bmi</th>
+              <th>Eredmény</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let eredmeny of eredmenyek">
+              <td>{{ eredmeny.magassag }}</td>
+              <td>{{ eredmeny.suly }}</td>
+              <td>{{ eredmeny.bmi }}</td>
+              <td>{{ eredmeny.kategoriak }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,50 @@
+<div class="container p-5">
+    <h1>Autok</h1>
+    <hr>
+    <br>
+    <div class="input-group mb-3 d-flex gap-3">
+        <input type="text" class="form-control" [(ngModel)]="gyarto" placeholder="Gyarto" aria-label="Username"
+            aria-describedby="basic-addon1">
+
+        <input type="text" class="form-control" [(ngModel)]="tipus" placeholder="tipus" aria-label="Username"
+            aria-describedby="basic-addon1">
+
+        <input type="number" class="form-control" [(ngModel)]="hengerurtartalom" placeholder="hengerurtartalom"
+            aria-label="Username" aria-describedby="basic-addon1"> 
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="benzinesE"  [(ngModel)]="benzinesE">
+            <label class="form-check-label" for="benzinesE">
+                benzines
+            </label>
+        </div>
+
+        <button (click)="felvitel()" class="btn btn-primary">Felvitel</button>
+    </div>
+
+
+
+    <br>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Gyarto</th>
+                <th>Tipus</th>
+                <th>Hengerurtartalom</th>
+                <th>BenzinesE</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let auto of autok">
+                <td>{{auto.gyarto}}</td>
+                <td>{{auto.tipus}}</td>
+                <td>{{auto.hengerurtartalom}}</td>
+                <td>{{auto.benzinesE ? 'benzines' : 'diesel'}}</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>

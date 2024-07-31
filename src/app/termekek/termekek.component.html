@@ -1,0 +1,49 @@
+<div class="container p-5">
+    <h1>Termekek</h1>
+    <hr>
+    <br>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" [(ngModel)]="cikkszam" placeholder="Cikkszam" aria-label="Username"
+            aria-describedby="basic-addon1">
+
+        <input type="text" class="form-control" [(ngModel)]="gyarto" placeholder="Gyarto" aria-label="Username"
+            aria-describedby="basic-addon1">
+
+        <input type="number" class="form-control" [(ngModel)]="nettoar" placeholder="Netto ar" aria-label="Username"
+            aria-describedby="basic-addon1">
+
+        <input type="number" class="form-control" [(ngModel)]="afa" placeholder="afa" aria-label="Username"
+            aria-describedby="basic-addon1">
+
+        <button (click)="felvitel()" class="btn btn-primary">Felvitel</button>
+    </div>
+
+
+
+    <br>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Cikkszam</th>
+                <th>Gyarto</th>
+                <th>Netto ar</th>
+                <th>afa</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let termek of termekek">
+                <td>{{termek.cikkszam}}</td>
+                <td>{{termek.gyarto}}</td>
+                <td>{{termek.nettoar}}</td>
+                <td>{{termek.afa}}</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+    <button (click)="bruttoAtlag()" class="btn btn-secondary">Br.atlag</button>
+    <h3>{{Atlag}}</h3>
+</div>
+
